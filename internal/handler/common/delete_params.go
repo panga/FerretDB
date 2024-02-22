@@ -39,6 +39,8 @@ type DeleteParams struct {
 	TxnNumber      int64           `ferretdb:"txnNumber,ignored"`
 	ClusterTime    any             `ferretdb:"$clusterTime,ignored"`
 	ReadPreference *types.Document `ferretdb:"$readPreference,ignored"`
+
+	MaxTimeMS int64 `ferretdb:"maxTimeMS,opt,wholePositiveNumber"`
 }
 
 // Delete represents single delete operation parameters.

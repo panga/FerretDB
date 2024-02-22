@@ -1488,13 +1488,15 @@ func filterFieldExprElemMatch(doc *types.Document, filterKey, filterSuffix strin
 			)
 		}
 
-		if expr.Len() > 1 && !strings.HasPrefix(key, "$") {
-			return false, handlererrors.NewCommandErrorMsgWithArgument(
-				handlererrors.ErrBadValue,
-				fmt.Sprintf("unknown operator: %s", key),
-				"$elemMatch",
-			)
-		}
+		// TODO https://github.com/FerretDB/FerretDB/issues/2262
+		// TODO https://github.com/FerretDB/FerretDB/issues/2964
+		// if expr.Len() > 1 && !strings.HasPrefix(key, "$") {
+		// 	return false, handlererrors.NewCommandErrorMsgWithArgument(
+		// 		handlererrors.ErrBadValue,
+		// 		fmt.Sprintf("unknown operator: %s", key),
+		// 		"$elemMatch",
+		// 	)
+		// }
 	}
 
 	value, err := doc.Get(filterSuffix)

@@ -27,8 +27,9 @@ type CountParams struct {
 	DB         string          `ferretdb:"$db"`
 	Collection string          `ferretdb:"count,collection"`
 
-	Skip  int64 `ferretdb:"skip,opt,positiveNumber"`
-	Limit int64 `ferretdb:"limit,opt,positiveNumber"`
+	Skip      int64 `ferretdb:"skip,opt,positiveNumber"`
+	Limit     int64 `ferretdb:"limit,opt,positiveNumber"`
+	MaxTimeMS int64 `ferretdb:"maxTimeMS,opt,wholePositiveNumber"`
 
 	Collation *types.Document `ferretdb:"collation,unimplemented"`
 

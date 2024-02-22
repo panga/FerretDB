@@ -44,9 +44,10 @@ type FindAndModifyParams struct {
 
 	HasUpdateOperators bool `ferretdb:"-"`
 
-	Let          *types.Document `ferretdb:"let,unimplemented"`
-	Collation    *types.Document `ferretdb:"collation,unimplemented"`
-	Fields       *types.Document `ferretdb:"fields,unimplemented"`
+	Let       *types.Document `ferretdb:"let,unimplemented"`
+	Collation *types.Document `ferretdb:"collation,unimplemented"`
+	//Fields    *types.Document `ferretdb:"fields,unimplemented"`
+	Fields       *types.Document `ferretdb:"fields,ignored"`
 	ArrayFilters *types.Array    `ferretdb:"arrayFilters,unimplemented"`
 
 	Hint                     string          `ferretdb:"hint,ignored"`

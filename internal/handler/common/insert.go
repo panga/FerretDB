@@ -40,6 +40,8 @@ type InsertParams struct {
 	LSID                     any    `ferretdb:"lsid,ignored"`
 	TxnNumber                int64  `ferretdb:"txnNumber,ignored"`
 	ClusterTime              any    `ferretdb:"$clusterTime,ignored"`
+
+	MaxTimeMS int64 `ferretdb:"maxTimeMS,opt,wholePositiveNumber"`
 }
 
 // GetInsertParams returns the parameters for an insert command.
